@@ -1,0 +1,42 @@
+1 - NODE.JS
+2 - EXPOR LIB npm install expo-cli --global
+3 - npx create-expo-app my-app
+4 - expo options run 
+5 - npx expo install react-native-web@~0.18.10 react-dom@18.2.0 @expo/webpack-config@^18.0.1
+
+
+- react navigation
+6 - npx expo install  @react-navigation/native
+7 - npx expo install react-native-screens react-native-safe-area-context
+8 - npx expo install @react-navigation/native-stack
+
+
+- cd my-app
+- or npx expo start que vai dar as opções {
+
+
+› Metro waiting on exp://10.0.0.100:19000
+› Scan the QR code above with Expo Go (Android) or the Camera app (iOS)
+
+› Press a │ open Android
+› Press w │ open web
+
+› Press j │ open debugger
+› Press r │ reload app
+› Press m │ toggle menu
+
+› Press ? │ show all commands
+
+Logs for your project will appear below. Press Ctrl+C to exit.
+}
+
+--RECOMENDADO:
+
+
+- npm run android
+- npm run ios # you need to use macOS to build the iOS project - use the Expo app if you need to do iOS development without a Mac
+- npm run web  - need install npx expo install react-native-web@~0.18.10 react-dom@18.2.0 @expo/webpack-config@^18.0.1
+
+
+10 LIB ANIMAÇÃO npx expo install react-native-animatable 
+10 lib de drag touch $ npx expo install react-native-gesture-handler
