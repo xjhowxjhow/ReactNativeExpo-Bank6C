@@ -2,7 +2,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack'
 
 //importar as telas
 import Welcome from '../pages/Welcome'
-import SignIn from '../pages/SignIn'
+import PageMain from '../pages/PageMain'
 
 const Stack = createNativeStackNavigator() // Cria a pilha de navegação
 
@@ -19,8 +19,8 @@ export default function Routes(){
                 />
 
             <Stack.Screen 
-                name="SignIn" 
-                component={SignIn}
+                name="PageMain" 
+                component={PageMain}
                 options={{headerShown:false}} // Oculta o cabeçalho
                 />
 

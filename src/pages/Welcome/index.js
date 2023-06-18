@@ -243,7 +243,7 @@ export default function Welcome() {
               <Text style={styles.text_btn2}>Entrar Com outra Conta</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles_pop.button_primary} onPress={() => navigation.navigate('SignIn')}>
+            <TouchableOpacity style={styles_pop.button_primary} onPress={() => navigation.navigate('PageMain')}>
               <Text style={styles.text_btn}>Entrar</Text>
             </TouchableOpacity>
 
