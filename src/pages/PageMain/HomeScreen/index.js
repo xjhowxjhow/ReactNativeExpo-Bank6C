@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, Image, TouchableOpacity, Animated, Button, ScrollView } from 'react-native'
 import * as Animatable from 'react-native-animatable'
-import { useNavigation } from '@react-navigation/native';
-
+import { useNavigation } from '@react-navigation/native'
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+import Ionicons from 'react-native-vector-icons/Ionicons'
+import FontAwesome from 'react-native-vector-icons/FontAwesome'
 export default function HomeScreen() {
 
     const Container = StyleSheet.create({
@@ -23,7 +25,7 @@ export default function HomeScreen() {
             flexDirection: 'row',
             justifyContent: 'space-between',
             width: '100%',
-            height: 50,
+            height: 60,
 
         },
         conainters_inside_top_l: {
@@ -39,13 +41,12 @@ export default function HomeScreen() {
         },
         conainters_inside_top_r: {
             width: '50%',
-            backgroundColor: 'rgba(255,255,255,0.1)',
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
             justifyContent: 'flex-end',
             paddingRight: 10,
-            gap: 5
+            gap: 10
 
         },
 
@@ -56,13 +57,28 @@ export default function HomeScreen() {
             borderRadius: 50,
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: '#fffafa'
+
+
+        },
+        icon_account_about: {
+
+            width: 20,
+            height: 20,
+            borderRadius: 50,
+            justifyContent: 'center',
+            alignItems: 'center',
+            borderWidth: 1,
+            borderColor: 'rgba(255, 255, 255, 255) ',
 
         },
         icon_account_txt: {
             fontSize: 12,
             color: '#2e2b2b'
         },
+        txt_user_wel: {
+            fontSize: 14,
+            color: '#ffffff',
+        }
 
     })
 
@@ -70,12 +86,14 @@ export default function HomeScreen() {
 
 
         scroll_area: {
+            
             width: '100%',
             height: '100%',
-            backgroundColor: '#282a36',
+           //backgroundColor: '#282a36', 
             position: 'relative',
             display: 'flex',
             flexDirection: 'column',
+            
         },
         testeScroll: {
             color: '#fff',
@@ -92,25 +110,25 @@ export default function HomeScreen() {
             <View style={Container_Top.container_top}>
 
                 <View style={Container_Top.conainters_inside_top_l}>
-                    <Text>Boa Noite, Jhow</Text>
+                    <Text style={Container_Top.txt_user_wel}>Boa Noite, Jhow</Text>
                 </View>
 
                 <View style={Container_Top.conainters_inside_top_r}>
 
-                    <TouchableOpacity style={Container_Top.icon_account}>
-                        <Text style={Container_Top.icon_account_txt}>JS</Text>
+                    <TouchableOpacity style={Container_Top.icon_account_about}>
+                        <MaterialCommunityIcons name='help' size={16} color={'#ffffff'}/>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={Container_Top.icon_account}>
-                        <Text style={Container_Top.icon_account_txt}>JS</Text>
+                        <Ionicons name='chatbox-outline'  size={20} color={'#ffffff'} />
                     </TouchableOpacity>
 
                     <TouchableOpacity style={Container_Top.icon_account}>
-                        <Text style={Container_Top.icon_account_txt}>JS</Text>
+                        <Ionicons name='eye-off-outline'  size={20} color={'#ffffff'} />
                     </TouchableOpacity>
 
                     <TouchableOpacity style={Container_Top.icon_account}>
-                        <Text style={Container_Top.icon_account_txt}>JS</Text>
+                        <FontAwesome name='user-o'  size={20} color={'#ffffff'} />
                     </TouchableOpacity>
 
                 </View>
