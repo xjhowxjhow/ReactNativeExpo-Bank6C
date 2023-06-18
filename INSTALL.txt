@@ -40,3 +40,4 @@ Logs for your project will appear below. Press Ctrl+C to exit.
 
 10 LIB ANIMAÇÃO npx expo install react-native-animatable 
 10 lib de drag touch $ npx expo install react-native-gesture-handler
+11 lib de painacao npx expo  install @react-navigation/bottom-tabs

@@ -1,10 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function PageMain() {
+export default function ProfileScreen() {
+
+  
   return (
     <View>
-      <Text>Main PAGE</Text>
+      <Text>ProfileScreenPage</Text>
     </View>
   )
 }
