@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, Image, TouchableOpacity, Animated, Button } from 'react-native'
 import * as Animatable from 'react-native-animatable'
-
+import { useNavigation } from '@react-navigation/native';
 
 
 
 export default function Welcome() {
 
+  const navigation = useNavigation();
   const [popaberto, setPopaberto] = useState(false);
 
 
@@ -242,7 +243,7 @@ export default function Welcome() {
               <Text style={styles.text_btn2}>Entrar Com outra Conta</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles_pop.button_primary} onPress={() => togglePopup()}>
+            <TouchableOpacity style={styles_pop.button_primary} onPress={() => navigation.navigate('SignIn')}>
               <Text style={styles.text_btn}>Entrar</Text>
             </TouchableOpacity>
 
