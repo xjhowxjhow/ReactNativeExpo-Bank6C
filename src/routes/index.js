@@ -22,8 +22,8 @@ const Tab = createBottomTabNavigator();
 function MainTabs() {
     return (
         <Tab.Navigator>
-            <Tab.Screen name="Home" component={HomeScreen} options={{headerShown:false}}/>
-            <Tab.Screen name="Profile" component={ProfileScreen} options={{headerShown:false}} />
+            <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+            <Tab.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
         </Tab.Navigator>
     );
 }
