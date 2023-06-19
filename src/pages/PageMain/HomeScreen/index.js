@@ -10,6 +10,13 @@ import Entypo from 'react-native-vector-icons/Entypo'
 
 export default function HomeScreen() {
 
+    // state view money eye
+    const [viewMoney, setViewMoney] = useState(true)
+
+    const setViewMoneyClick = () => {
+        setViewMoney(!viewMoney)
+    }
+
     const Container = StyleSheet.create({
         container: {
             backgroundColor: '#121212', // itens 2f2b29
@@ -221,13 +228,53 @@ export default function HomeScreen() {
         dual_optn: {
             display: 'flex',
             flexDirection: 'row',
-            justifyContent:'center',
-            alignItems:'center',
+            justifyContent: 'center',
+            alignItems: 'center',
             width: '50%',
             height: '100%',
-            backgroundColor:'rba(255,255,255,0.5)',
+            backgroundColor: 'rba(255,255,255,0.5)',
             //borderRightColor: 'rgba(255, 255, 255, 255) ',
 
+        }
+    })
+
+
+    const ScrollCards = StyleSheet.create({
+        // algumas propriedades estao como AUTO 
+        container: {
+            height: 'auto',
+            width: '100%',
+            //backgroundColor: 'rgba(255, 255, 255, 0.2) ',
+
+
+        },
+        container_main_scroll: {
+            width: 'auto',
+            height: '100%',
+            position: 'relative',
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'flex-start',
+            //backgroundColor: 'rgba(255, 255, 255, 0.3) ',
+            gap: 10,
+
+        },
+        teste_1: {
+            height: 150,
+            width: 300,
+            backgroundColor: '#38b3dd'
+        },
+
+        Container_Boxers: {
+
+            width: 350,
+            height: 'auto',
+            backgroundColor: '#242424',
+            borderRadius: 15,
+            display: 'flex',
+            flexDirection: 'column',
+            padding: 0,
+            overflow: 'hidden',
         }
     })
 
@@ -252,8 +299,8 @@ export default function HomeScreen() {
                         <Ionicons name='chatbox-outline' size={20} color={'#ffffff'} />
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={Container_Top.icon_account}>
-                        <Ionicons name='eye-off-outline' size={20} color={'#ffffff'} />
+                    <TouchableOpacity style={Container_Top.icon_account} onPress={() => setViewMoneyClick()}>
+                        {viewMoney ? <Ionicons name='eye-outline' size={20} color={'#ffffff'}  /> : <Ionicons name='eye-off-outline' size={20} color={'#ffffff'} />}
                     </TouchableOpacity>
 
                     <TouchableOpacity style={Container_Top.icon_account}>
@@ -278,7 +325,8 @@ export default function HomeScreen() {
                         </View>
                         <View style={BoxIntem.container_cc_mid}>
                             <Text style={BoxIntem.txt_int_cc_bottom}>R$</Text>
-                            <Text style={BoxIntem.txt_int_cc_bottom}>.......</Text>
+                            {/* usa o state view money eye */}
+                            <Text style={BoxIntem.txt_int_cc_bottom}> {viewMoney ? '1.578,87' : '********'}</Text>
                         </View>
                         <TouchableOpacity style={BoxIntem.container_cc_bottom}>
                             <Text style={BoxIntem.txt_int_cc_bottom}>Exibir extrato</Text>
@@ -306,8 +354,8 @@ export default function HomeScreen() {
 
                         <View style={BoxIntem_Inv.container_cc_mid}>
                             <Text style={BoxIntem.txt_int_cc_bottom}>Total Bruto</Text>
-                            <Text style={BoxIntem.txt_int_cc_bottom}>R$ 217.785,45</Text>
-                            <Text style={BoxIntem.txt_int_cc_bottom_greb}>R$ 875,90</Text>
+                            <Text style={BoxIntem.txt_int_cc_bottom}>{viewMoney ?'R$ 217.785,45' :'R$ ********'} </Text>
+                            <Text style={BoxIntem.txt_int_cc_bottom_greb}>{viewMoney ?'R$ 875,90' : 'R$ *****'}</Text>
                         </View>
 
 
@@ -318,7 +366,7 @@ export default function HomeScreen() {
                             </TouchableOpacity>
 
                             <View style={{ width: 1, height: '100%', backgroundColor: 'rgba(255, 255, 255, 0.1)' }}></View>
-                            
+
                             <TouchableOpacity style={BoxIntem_Inv.dual_optn}>
                                 <Text style={BoxIntem.txt_int_cc_bottom}>Investir</Text>
                             </TouchableOpacity>
@@ -328,11 +376,78 @@ export default function HomeScreen() {
 
                     {/* End Box 2 */}
 
-                    <View style={Container_Boxers.container}>
-                        <Text>Teste</Text>
-                        <Text>Teste</Text>
-                        <Text>Teste</Text>
-                    </View>
+                    {/* Separador Text */}
+
+                    <Text style={SeparadorText.txt}>Meus Cartoes</Text>
+
+                    {/* Separador Text */}
+
+                    {/* Box 3 */}
+
+                    <ScrollView style={ScrollCards.container} horizontal={true} showsHorizontalScrollIndicator={false}>
+
+
+
+                        <View style={ScrollCards.container_main_scroll}>
+
+
+
+                            {/* teste boxers */}
+
+
+                            <View style={ScrollCards.Container_Boxers}>
+                                <View style={BoxIntem.container_cc_top}>
+                                    <Image source={require('../../../assets/page_main/brasil.png')} style={{ width: 12, height: 12 }} />
+                                    <Text style={BoxIntem.txt_int_cc_bottom}>Saldo em Conta Corrente</Text>
+                                </View>
+                                <View style={BoxIntem.container_cc_mid}>
+                                    <Text style={BoxIntem.txt_int_cc_bottom}>R$</Text>
+                                    <Text style={BoxIntem.txt_int_cc_bottom}>.......</Text>
+                                </View>
+                                <TouchableOpacity style={BoxIntem.container_cc_bottom}>
+                                    <Text style={BoxIntem.txt_int_cc_bottom}>Exibir extrato</Text>
+                                    <Text style={BoxIntem.txt_int_cc_bottom}>
+                                        <Entypo name='chevron-small-right' size={20} color={'#ffffff'} />
+                                    </Text>
+                                </TouchableOpacity  >
+                            </View>
+
+
+                            <View style={ScrollCards.Container_Boxers}>
+                                <View style={BoxIntem.container_cc_top}>
+                                    <Image source={require('../../../assets/page_main/brasil.png')} style={{ width: 12, height: 12 }} />
+                                    <Text style={BoxIntem.txt_int_cc_bottom}>Saldo em Conta Corrente</Text>
+                                </View>
+                                <View style={BoxIntem.container_cc_mid}>
+                                    <Text style={BoxIntem.txt_int_cc_bottom}>R$</Text>
+                                    <Text style={BoxIntem.txt_int_cc_bottom}>.......</Text>
+                                </View>
+                                <TouchableOpacity style={BoxIntem.container_cc_bottom}>
+                                    <Text style={BoxIntem.txt_int_cc_bottom}>Exibir extrato</Text>
+                                    <Text style={BoxIntem.txt_int_cc_bottom}>
+                                        <Entypo name='chevron-small-right' size={20} color={'#ffffff'} />
+                                    </Text>
+                                </TouchableOpacity  >
+                            </View>
+
+                            <View style={ScrollCards.Container_Boxers}>
+                                <Text>Teste</Text>
+                                <Text >Teste</Text>
+                                <Text>Teste</Text>
+                                <Text>Teste</Text>
+                                <Text >Teste</Text>
+                            </View>
+
+
+
+
+                        </View>
+
+
+                    </ScrollView>
+
+                    {/* End Box 3 */}
+
 
                     <View style={Container_Boxers.container}>
                         <Text>Teste</Text>
