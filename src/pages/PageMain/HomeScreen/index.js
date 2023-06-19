@@ -6,7 +6,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import Entypo from 'react-native-vector-icons/Entypo'
-
+import Feather from 'react-native-vector-icons/Feather'
 
 export default function HomeScreen() {
 
@@ -200,6 +200,20 @@ export default function HomeScreen() {
         }
     })
 
+    const SepararoGroupOptons = StyleSheet.create({
+
+        container: {
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+        },
+        txt_btn: {
+            fontSize: 15,
+            color: '#22a0dd',
+            fontWeight: 'bold',
+        },
+    })
 
     const BoxIntem_Inv = StyleSheet.create({  //conta corrente
 
@@ -275,7 +289,40 @@ export default function HomeScreen() {
             flexDirection: 'column',
             padding: 0,
             overflow: 'hidden',
+        },
+
+        Container_Sts_Card_Fatura: {
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+
+        },
+
+        txt_cc_bottom_bold: {
+            fontSize: 15,
+            color: '#ffffff',
+            fontWeight: 'bold',
         }
+        ,
+        Container_Group_Txt: {
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: 5,
+
+        },
+        container_cc_mid: {
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+            gap: 10,
+            padding: 25
+        },
+        
     })
 
 
@@ -300,7 +347,7 @@ export default function HomeScreen() {
                     </TouchableOpacity>
 
                     <TouchableOpacity style={Container_Top.icon_account} onPress={() => setViewMoneyClick()}>
-                        {viewMoney ? <Ionicons name='eye-outline' size={20} color={'#ffffff'}  /> : <Ionicons name='eye-off-outline' size={20} color={'#ffffff'} />}
+                        {viewMoney ? <Ionicons name='eye-outline' size={20} color={'#ffffff'} /> : <Ionicons name='eye-off-outline' size={20} color={'#ffffff'} />}
                     </TouchableOpacity>
 
                     <TouchableOpacity style={Container_Top.icon_account}>
@@ -354,8 +401,8 @@ export default function HomeScreen() {
 
                         <View style={BoxIntem_Inv.container_cc_mid}>
                             <Text style={BoxIntem.txt_int_cc_bottom}>Total Bruto</Text>
-                            <Text style={BoxIntem.txt_int_cc_bottom}>{viewMoney ?'R$ 217.785,45' :'R$ ********'} </Text>
-                            <Text style={BoxIntem.txt_int_cc_bottom_greb}>{viewMoney ?'R$ 875,90' : 'R$ *****'}</Text>
+                            <Text style={BoxIntem.txt_int_cc_bottom}>{viewMoney ? 'R$ 217.785,45' : 'R$ ********'} </Text>
+                            <Text style={BoxIntem.txt_int_cc_bottom_greb}>{viewMoney ? 'R$ 875,90' : 'R$ *****'}</Text>
                         </View>
 
 
@@ -377,68 +424,55 @@ export default function HomeScreen() {
                     {/* End Box 2 */}
 
                     {/* Separador Text */}
+                    <View style={SepararoGroupOptons.container}>
+                        <Text style={SeparadorText.txt}>Meus Cartoes</Text>
+                        <TouchableOpacity style={SeparadorText.txt}>
+                            <Text style={SepararoGroupOptons.txt_btn}>Cartão Virtual</Text>
+                        </TouchableOpacity>
+                    </View>
 
-                    <Text style={SeparadorText.txt}>Meus Cartoes</Text>
 
                     {/* Separador Text */}
 
                     {/* Box 3 */}
 
                     <ScrollView style={ScrollCards.container} horizontal={true} showsHorizontalScrollIndicator={false}>
-
-
-
                         <View style={ScrollCards.container_main_scroll}>
-
-
-
                             {/* teste boxers */}
 
 
                             <View style={ScrollCards.Container_Boxers}>
                                 <View style={BoxIntem.container_cc_top}>
-                                    <Image source={require('../../../assets/page_main/brasil.png')} style={{ width: 12, height: 12 }} />
-                                    <Text style={BoxIntem.txt_int_cc_bottom}>Saldo em Conta Corrente</Text>
+                                    <View style={ScrollCards.Container_Sts_Card_Fatura}>
+                                        <View style={ScrollCards.Container_Group_Txt}>
+                                            <Feather name='loader' size={16} color={'#a2661d'} />
+                                            <Text style={ScrollCards.txt_cc_bottom_bold}>ABERTA</Text>
+                                        </View>
+                                        <View style={ScrollCards.Container_Group_Txt}>
+                                            <Text style={BoxIntem.txt_int_cc_bottom}>Vence em </Text>
+                                            <Text style={ScrollCards.txt_cc_bottom_bold}>10/07</Text>
+                                        </View>
+                                    </View>
+
                                 </View>
-                                <View style={BoxIntem.container_cc_mid}>
+                                <View style={ScrollCards.container_cc_mid}>
                                     <Text style={BoxIntem.txt_int_cc_bottom}>R$</Text>
                                     <Text style={BoxIntem.txt_int_cc_bottom}>.......</Text>
                                 </View>
-                                <TouchableOpacity style={BoxIntem.container_cc_bottom}>
-                                    <Text style={BoxIntem.txt_int_cc_bottom}>Exibir extrato</Text>
-                                    <Text style={BoxIntem.txt_int_cc_bottom}>
-                                        <Entypo name='chevron-small-right' size={20} color={'#ffffff'} />
-                                    </Text>
-                                </TouchableOpacity  >
+
+                                <View style={BoxIntem_Inv.container_cc_bottom}>
+
+                                    <TouchableOpacity style={BoxIntem_Inv.dual_optn}>
+                                        <Text style={BoxIntem.txt_int_cc_bottom}>Baixar Fatura</Text>
+                                    </TouchableOpacity>
+
+                                    <View style={{ width: 1, height: '100%', backgroundColor: 'rgba(255, 255, 255, 0.1)' }}></View>
+
+                                    <TouchableOpacity style={BoxIntem_Inv.dual_optn}>
+                                        <Text style={BoxIntem.txt_int_cc_bottom}>Acessar fatura</Text>
+                                    </TouchableOpacity>
+                                </View  >
                             </View>
-
-
-                            <View style={ScrollCards.Container_Boxers}>
-                                <View style={BoxIntem.container_cc_top}>
-                                    <Image source={require('../../../assets/page_main/brasil.png')} style={{ width: 12, height: 12 }} />
-                                    <Text style={BoxIntem.txt_int_cc_bottom}>Saldo em Conta Corrente</Text>
-                                </View>
-                                <View style={BoxIntem.container_cc_mid}>
-                                    <Text style={BoxIntem.txt_int_cc_bottom}>R$</Text>
-                                    <Text style={BoxIntem.txt_int_cc_bottom}>.......</Text>
-                                </View>
-                                <TouchableOpacity style={BoxIntem.container_cc_bottom}>
-                                    <Text style={BoxIntem.txt_int_cc_bottom}>Exibir extrato</Text>
-                                    <Text style={BoxIntem.txt_int_cc_bottom}>
-                                        <Entypo name='chevron-small-right' size={20} color={'#ffffff'} />
-                                    </Text>
-                                </TouchableOpacity  >
-                            </View>
-
-                            <View style={ScrollCards.Container_Boxers}>
-                                <Text>Teste</Text>
-                                <Text >Teste</Text>
-                                <Text>Teste</Text>
-                                <Text>Teste</Text>
-                                <Text >Teste</Text>
-                            </View>
-
-
 
 
                         </View>
