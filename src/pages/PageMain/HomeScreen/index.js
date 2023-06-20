@@ -311,6 +311,7 @@ export default function HomeScreen() {
             flexDirection: 'row',
             alignItems: 'center',
             gap: 5,
+            paddingRight: 10,
 
         },
         container_cc_mid: {
@@ -322,7 +323,7 @@ export default function HomeScreen() {
             gap: 10,
             padding: 25
         },
-        
+
     })
 
 
@@ -367,7 +368,7 @@ export default function HomeScreen() {
                     {/* Box 1 */}
                     <View style={Container_Boxers.container}>
                         <View style={BoxIntem.container_cc_top}>
-                            <Image source={require('../../../assets/page_main/brasil.png')} style={{ width: 12, height: 12 }} />
+                            <Image source={require('../../../assets/page_main/brasil.png')} style={{ width: 12, height: 12, borderRadius: 50 }} />
                             <Text style={BoxIntem.txt_int_cc_bottom}>Saldo em Conta Corrente</Text>
                         </View>
                         <View style={BoxIntem.container_cc_mid}>
@@ -382,20 +383,20 @@ export default function HomeScreen() {
                             </Text>
                         </TouchableOpacity  >
                     </View>
-                    {/* End Box 1 */}
+
 
                     {/* Separador Text */}
 
                     <Text style={SeparadorText.txt}>C6 Invest</Text>
 
-                    {/* Separador Text */}
+
 
                     {/* Box 2 */}
 
                     <View style={Container_Boxers.container}>
 
                         <View style={BoxIntem.container_cc_top}>
-                            <Image source={require('../../../assets/page_main/brasil.png')} style={{ width: 12, height: 12 }} />
+                            <Image source={require('../../../assets/page_main/brasil.png')} style={{ width: 12, height: 12, borderRadius: 50 }} />
                             <Text style={BoxIntem.txt_int_cc_bottom}>Brasil</Text>
                         </View>
 
@@ -421,7 +422,6 @@ export default function HomeScreen() {
 
                     </View>
 
-                    {/* End Box 2 */}
 
                     {/* Separador Text */}
                     <View style={SepararoGroupOptons.container}>
@@ -432,7 +432,6 @@ export default function HomeScreen() {
                     </View>
 
 
-                    {/* Separador Text */}
 
                     {/* Box 3 */}
 
@@ -441,6 +440,7 @@ export default function HomeScreen() {
                             {/* teste boxers */}
 
 
+                            {/* Box Card 1 */}
                             <View style={ScrollCards.Container_Boxers}>
                                 <View style={BoxIntem.container_cc_top}>
                                     <View style={ScrollCards.Container_Sts_Card_Fatura}>
@@ -457,7 +457,7 @@ export default function HomeScreen() {
                                 </View>
                                 <View style={ScrollCards.container_cc_mid}>
                                     <Text style={BoxIntem.txt_int_cc_bottom}>R$</Text>
-                                    <Text style={BoxIntem.txt_int_cc_bottom}>.......</Text>
+                                    <Text style={BoxIntem.txt_int_cc_bottom}>{viewMoney ? '1.785,45' : '********'}</Text>
                                 </View>
 
                                 <View style={BoxIntem_Inv.container_cc_bottom}>
@@ -474,7 +474,10 @@ export default function HomeScreen() {
                                 </View  >
                             </View>
 
-
+                            {/* Box Card 2 */}
+                            <View style={ScrollCards.Container_Boxers}>
+                                
+                            </View>
                         </View>
 
 
