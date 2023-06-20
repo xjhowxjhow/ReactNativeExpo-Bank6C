@@ -22,9 +22,9 @@ const ContainerMid = styled.View`
 
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
     padding: 15px;
 `
