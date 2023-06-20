@@ -348,7 +348,7 @@ export default function HomeScreen() {
                 <ContainerSeparatorSection title={'C6 Invest'} />
                 <BoxerInvest />
                 <ContainerSeparatorOptions title={'Meus Cartoes'} btn_text={'Cartão Virtual'} />
-
+                {/* End SyledComponents Continue.. */}
 
 
                 {/* Box 3 */}
