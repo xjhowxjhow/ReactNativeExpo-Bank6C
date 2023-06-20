@@ -36,7 +36,7 @@ export default function HomeScreen() {
                     <BoxScrollCardFatura viewMoney={viewMoney}/>
                     <BoxScrollCardFatura viewMoney={viewMoney}/>
                 </ScrollContainerCards>
-                
+                <BoxerInvest viewMoney={viewMoney} />
                 
 
             </ContainerScrollView>
