@@ -26,7 +26,7 @@ const ContainerInsideTopLeft = styled.View`
     padding-left: 10px;`
 
 const TextUserWelcome = styled.Text`
-    font-size: 15px;
+    font-size: 14px;
     color: #ffffff;
 
 `
