@@ -76,7 +76,7 @@ const LineSeparator = styled.View`
     background-color: rgba(255,255,255,0.1) ;
 `
 
-function BoxerInvest(props) {
+function BoxerInvest({viewMoney}) {
 
 
 
@@ -88,8 +88,8 @@ function BoxerInvest(props) {
             </ContainerTop>
             <ContainerMid>
                 <TextContinaer>Total Bruto</TextContinaer>
-                <TextContinaer>R$ ********</TextContinaer>
-                <TextContainerInvestGreen>R$ *****</TextContainerInvestGreen>
+                <TextContinaer> {viewMoney ? 'R$ 217.785,45' : 'R$ ********'} </TextContinaer>
+                <TextContainerInvestGreen> {viewMoney ? 'R$ 785,45' : 'R$ ********'} </TextContainerInvestGreen>
             </ContainerMid>
             <DualContainerOptions>
                 <ButtonOption>

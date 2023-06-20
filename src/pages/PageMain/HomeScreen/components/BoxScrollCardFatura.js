@@ -108,7 +108,7 @@ const LineSeparator = styled.View`
 `
 
 
-function BoxScrollCardFatura(props) {
+function BoxScrollCardFatura({viewMoney}) {
 
     return (
         <ContainerScrollCardBoxers>
@@ -130,7 +130,7 @@ function BoxScrollCardFatura(props) {
 
             <ContainerMid>
                 <TextNormal>R$</TextNormal>
-                <TextBold>********</TextBold>
+                <TextBold>{viewMoney ? '878,80': '---'}</TextBold>
             </ContainerMid>
 
             <ContainerBottom>

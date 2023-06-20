@@ -56,7 +56,7 @@ const TextContinaer = styled.Text`
 
 
 
-function BoxerAccount(props) {
+function BoxerAccount({viewMoney}) {
 
 
 
@@ -71,7 +71,7 @@ function BoxerAccount(props) {
             <ContainerMid>
                 <TextContinaer>R$</TextContinaer>
                 {/* <Text style={BoxIntem.txt_int_cc_bottom}> {viewMoney ? '1.578,87' : '********'}</Text> */}
-                <TextContinaer>********</TextContinaer>
+                <TextContinaer>{viewMoney ? '1.578,87' : '********'}</TextContinaer>
             </ContainerMid>
 
             <ContainerBottomBTN>

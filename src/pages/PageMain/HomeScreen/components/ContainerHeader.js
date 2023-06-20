@@ -62,7 +62,7 @@ const IconAcctounDefault = styled.TouchableOpacity`
 
     `
 
-function ContainerHeader() {
+function ContainerHeader({ viewMoney }) {
 
     return (
 
@@ -81,7 +81,7 @@ function ContainerHeader() {
                     <Ionicons name='chatbox-outline' size={20} color={'#ffffff'} />
                 </IconAcctounDefault>
 
-                <IconAcctounDefault>
+                <IconAcctounDefault onPress={() => viewMoney()}>
                     {/* {viewMoney ? <Ionicons name='eye-outline' size={20} color={'#ffffff'} /> : <Ionicons name='eye-off-outline' size={20} color={'#ffffff'} />} */}
                     <Ionicons name='eye-outline' size={20} color={'#ffffff'} />
                 </IconAcctounDefault>
