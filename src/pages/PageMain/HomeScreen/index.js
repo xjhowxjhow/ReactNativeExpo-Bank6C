@@ -20,7 +20,6 @@ export default function HomeScreen() {
     const [viewMoney, setViewMoney] = useState(true)
 
     const setViewMoneyClick = () => {
-        console.log('click')
         setViewMoney(!viewMoney)
     }
 
@@ -35,7 +34,9 @@ export default function HomeScreen() {
                 <ContainerSeparatorOptions title={'Meus Cartoes'} btn_text={'Cartão Virtual'} />
                 <ScrollContainerCards>
                     <BoxScrollCardFatura viewMoney={viewMoney}/>
+                    <BoxScrollCardFatura viewMoney={viewMoney}/>
                 </ScrollContainerCards>
+                
                 
 
             </ContainerScrollView>
