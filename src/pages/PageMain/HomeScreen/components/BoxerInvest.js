@@ -86,20 +86,16 @@ function BoxerInvest(props) {
                 <Image source={require('../../../../assets/page_main/brasil.png')} style={{ width: 12, height: 12, borderRadius: 50 }} />
                 <TextContinaer>Brasil</TextContinaer>
             </ContainerTop>
-
             <ContainerMid>
                 <TextContinaer>Total Bruto</TextContinaer>
                 <TextContinaer>R$ ********</TextContinaer>
                 <TextContainerInvestGreen>R$ *****</TextContainerInvestGreen>
             </ContainerMid>
-
             <DualContainerOptions>
                 <ButtonOption>
                     <TextContinaer>Ver detalhes</TextContinaer>
                 </ButtonOption>
-
                 <LineSeparator />
-
                 <ButtonOption>
                     <TextContinaer>Investir</TextContinaer>
                 </ButtonOption>
