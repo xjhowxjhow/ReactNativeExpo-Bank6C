@@ -18,7 +18,7 @@ import BoxerAccount from './components/BoxerAccount'
 import BoxerInvest from './components/BoxerInvest'
 import ContainerSeparatorOptions from './components/ContainerSeparatorOptions'
 import ScrollContainerCards from './components/ScrollContainersBoxers'
-
+import BoxScrollCardFatura from './components/BoxScrollCardFatura'
 
 
 export default function HomeScreen() {
@@ -350,77 +350,10 @@ export default function HomeScreen() {
                 <ContainerSeparatorSection title={'C6 Invest'} />
                 <BoxerInvest />
                 <ContainerSeparatorOptions title={'Meus Cartoes'} btn_text={'Cartão Virtual'} />
-                {/* End SyledComponents Continue.. */}
-
-
-                {/* Box 3 */}
-
                 <ScrollContainerCards>
-
-
-                    {/* Box Card 1 */}
-                    <View style={ScrollCards.Container_Boxers}>
-                        <View style={BoxIntem.container_cc_top}>
-                            <View style={ScrollCards.Container_Sts_Card_Fatura}>
-                                <View style={ScrollCards.Container_Group_Txt}>
-                                    <Feather name='loader' size={16} color={'#a2661d'} />
-                                    <Text style={ScrollCards.txt_cc_bottom_bold}>ABERTA</Text>
-                                </View>
-                                <View style={ScrollCards.Container_Group_Txt}>
-                                    <Text style={BoxIntem.txt_int_cc_bottom}>Vence em </Text>
-                                    <Text style={ScrollCards.txt_cc_bottom_bold}>10/07</Text>
-                                </View>
-                            </View>
-
-                        </View>
-                        <View style={ScrollCards.container_cc_mid}>
-                            <Text style={BoxIntem.txt_int_cc_bottom}>R$</Text>
-                            <Text style={BoxIntem.txt_int_cc_bottom}>{viewMoney ? '1.785,45' : '********'}</Text>
-                        </View>
-                        <View style={BoxIntem_Inv.container_cc_bottom}>
-
-                            <TouchableOpacity style={BoxIntem_Inv.dual_optn}>
-                                <Text style={BoxIntem.txt_int_cc_bottom}>Baixar Fatura</Text>
-                            </TouchableOpacity>
-
-                            <View style={{ width: 1, height: '100%', backgroundColor: 'rgba(255, 255, 255, 0.1)' }}></View>
-
-                            <TouchableOpacity style={BoxIntem_Inv.dual_optn}>
-                                <Text style={BoxIntem.txt_int_cc_bottom}>Acessar fatura</Text>
-                            </TouchableOpacity>
-                        </View  >
-                    </View>
-
-                    {/* Box Card 2 */}
-                    <View style={ScrollCards.Container_Boxers}>
-                    </View>
-
-
+                    <BoxScrollCardFatura/>
                 </ScrollContainerCards>
-
-
-
-                <View style={Container_Boxers.container}>
-                    <Text>Teste</Text>
-                    <Text>Teste</Text>
-                    <Text>Teste</Text>
-                    <Text>Teste</Text>
-                </View>
-
-                <View style={Container_Boxers.container}>
-                    <Text>Teste</Text>
-                    <Text>Teste</Text>
-                    <Text>Teste</Text>
-                </View>
-
-                <View style={Container_Boxers.container}>
-                    <Text>Teste</Text>
-                    <Text>Teste</Text>
-                    <Text>Teste</Text>
-                    <Text>Teste</Text>
-                    <Text>Teste</Text>
-                </View>
-
+                
 
             </ContainerScrollView>
 
