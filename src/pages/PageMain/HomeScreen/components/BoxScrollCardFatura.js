@@ -11,6 +11,7 @@ import ContainerScrollCardBoxers from './ContainerScrollCardBoxers'
 const ContainerTop = styled.View`
 
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -26,6 +27,7 @@ const ContainerTop = styled.View`
 
 const ContainerMid = styled.View`
     width: 100%;
+    height: 50%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -68,6 +70,14 @@ const ContainerGroupTxt = styled.View`
 const TextBold = styled.Text`
 
     font-size: 15px;
+    color: #ffffff;
+    font-weight: bold;
+
+`
+
+const TextBoldMoney = styled.Text`
+
+    font-size: 20px;
     color: #ffffff;
     font-weight: bold;
 
@@ -130,7 +140,7 @@ function BoxScrollCardFatura({viewMoney}) {
 
             <ContainerMid>
                 <TextNormal>R$</TextNormal>
-                <TextBold>{viewMoney ? '878,80': '---'}</TextBold>
+                <TextBoldMoney>{viewMoney ? '878,80': '---'}</TextBoldMoney>
             </ContainerMid>
 
             <ContainerBottom>

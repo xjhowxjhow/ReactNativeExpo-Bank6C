@@ -12,7 +12,7 @@ import BoxerInvest from './components/BoxerInvest'
 import ContainerSeparatorOptions from './components/ContainerSeparatorOptions'
 import ScrollContainerCards from './components/ScrollContainersBoxers'
 import BoxScrollCardFatura from './components/BoxScrollCardFatura'
-
+import BoxerScrollCards from './components/BoxerScrollCards'
 
 export default function HomeScreen() {
 
@@ -29,13 +29,18 @@ export default function HomeScreen() {
 
             <ContainerScrollView>
                 <BoxerAccount viewMoney={viewMoney} />
+
                 <ContainerSeparatorSection title={'C6 Invest'} />
+
                 <BoxerInvest viewMoney={viewMoney} />
+
                 <ContainerSeparatorOptions title={'Meus Cartoes'} btn_text={'Cartão Virtual'} />
+                
                 <ScrollContainerCards>
                     <BoxScrollCardFatura viewMoney={viewMoney}/>
-                    <BoxScrollCardFatura viewMoney={viewMoney}/>
+                    <BoxerScrollCards/>
                 </ScrollContainerCards>
+                
                 <BoxerInvest viewMoney={viewMoney} />
                 
 
