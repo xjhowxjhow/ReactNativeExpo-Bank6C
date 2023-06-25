@@ -3,19 +3,27 @@ import React, { useState } from 'react'
 
 // components
 
+// Containers
+import ContainerSeparatorOptions from './components/ContainerSeparatorOptions'
+import ContainerSeparatorIcon from './components/ContainerSeparatorIcon'
 import ContainerMain from './components/ContainerMain'
 import ContainerHeader from './components/ContainerHeader'
 import ContainerScrollView from './components/ContainerScrollView'
 import ContainerSeparatorSection from './components/ContainerSeparatorSection'
+
+// Boxers
 import BoxerAccount from './components/BoxerAccount'
 import BoxerInvest from './components/BoxerInvest'
-import ContainerSeparatorOptions from './components/ContainerSeparatorOptions'
-import ScrollContainerCards from './components/ScrollContainersBoxers'
-import BoxScrollCardFatura from './components/BoxScrollCardFatura'
 import BoxerScrollCards from './components/BoxerScrollCards'
 import BoxerScrollCardAdd from './components/BoxerScrollCardAdd'
+import BoxScrollCardFatura from './components/BoxScrollCardFatura'
+import BoxerPix from './components/BoxerPix'
+import BoxerAtalhos from './components/BoxerAtalhos'
 
-import ContainerSeparatorIcon from './components/ContainerSeparatorIcon'
+// Scroll Containers
+import ScrollContainerCards from './components/ScrollContainersBoxers'
+
+
 export default function HomeScreen() {
 
     // state view money eye
@@ -47,6 +55,9 @@ export default function HomeScreen() {
 
 
                 <ContainerSeparatorIcon title={'Pix'} />
+
+                <BoxerPix />
+                <BoxerAtalhos />
 
             </ContainerScrollView>
 

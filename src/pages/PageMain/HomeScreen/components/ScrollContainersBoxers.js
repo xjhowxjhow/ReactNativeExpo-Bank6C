@@ -18,7 +18,7 @@ const ContainerMainScroll = styled.View`
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    gap: 10px;
+    gap: 18px;
 
     `
 

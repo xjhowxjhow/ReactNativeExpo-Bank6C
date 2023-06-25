@@ -1,16 +1,13 @@
 import React, { useState } from 'react'
-import { Image } from 'react-native'
 import styled from 'styled-components/native'
 
 
 
-
-
-
 const Container = styled.View`
-    width: 330px;
+
+    width: 100%;
     height: auto;
-    background-color: #242424;
+    background-color: transparent;  
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -21,7 +18,7 @@ const Container = styled.View`
 
 
 
-function ContainerScrollCardBoxers(props) {
+function ContainerBoxersTransp(props) {
 
 
     return (
@@ -32,6 +29,4 @@ function ContainerScrollCardBoxers(props) {
 }
 
 
-
-export default ContainerScrollCardBoxers
-
+export default ContainerBoxersTransp
