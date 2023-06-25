@@ -57,7 +57,10 @@ export default function HomeScreen() {
                 <ContainerSeparatorIcon title={'Pix'} />
 
                 <BoxerPix />
+
                 <BoxerAtalhos />
+
+                <ContainerSeparatorOptions title={'Para Você'} btn_text={'Exibir menos '} />
 
             </ContainerScrollView>
 
