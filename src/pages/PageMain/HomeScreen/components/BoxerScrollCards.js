@@ -90,7 +90,7 @@ const ContainerSeparatorText = styled.View`
 
 `
 
-const ContainerBlockCard = styled.View`
+const BTNContainerBlockCard = styled.TouchableOpacity`
     width: 50%;
     height: 100%;
     display: flex;
@@ -112,9 +112,14 @@ const BtnDetails = styled.TouchableOpacity`
     padding-right: 25px;
 
 `
-    
 
-function BoxScrollCards({ viewMoney }) {
+
+function BoxScrollCards({ virtualcard, final, block }) {
+
+    const [lock, setLock] = useState(block)
+    const [virutal, setVirtual] = useState(virtualcard)
+
+    //default state
 
     return (
         <ContainerScrollCardBoxers>
@@ -130,8 +135,12 @@ function BoxScrollCards({ viewMoney }) {
 
                 <ContinerLeftCardsText>
                     <ContainerSeparatorText>
-                        <TextContinaer>Cartão</TextContinaer>
-                        <TexrContinerBold>Final 1626</TexrContinerBold>
+                        {virutal ? (
+                            <TextContinaer>Cartão virtual </TextContinaer>
+                        ) : (
+                            <TextContinaer>Cartão</TextContinaer>
+                        )}
+                        <TexrContinerBold>Final {final}</TexrContinerBold>
                     </ContainerSeparatorText>
                     <ContainerSeparatorText>
                         <TextContinaer>Nome Gravado</TextContinaer>
@@ -145,12 +154,20 @@ function BoxScrollCards({ viewMoney }) {
 
 
             <ContainerBottom>
+                {lock ? (
+                    <BTNContainerBlockCard onPress={() => setLock(!lock)}>
+                        <MaterialIcons name="lock-outline" size={20} color="#fe0912" />
+                        <TextContinaer>Bloqueado</TextContinaer>
+                    </BTNContainerBlockCard>
+                    )
+                    :
+                    (
+                        <BTNContainerBlockCard onPress={() => setLock(!lock)}>
+                            <MaterialIcons name="lock-open" size={20} color="#4add72" />
+                            <TextContinaer>Desbloqueado</TextContinaer>
+                        </BTNContainerBlockCard>
+                    )}
 
-                <ContainerBlockCard>
-                    {/* <MaterialIcons name="lock-outline" size={20} color="#ffffff" /> */}
-                    <MaterialIcons name="lock-open" size={20} color="#4add72" />
-                    <TextContinaer>Desbloqueado</TextContinaer>
-                </ContainerBlockCard>
 
                 <BtnDetails>
                     <TexrContinerBoldblue>Detalhes</TexrContinerBoldblue>
@@ -161,7 +178,6 @@ function BoxScrollCards({ viewMoney }) {
         </ContainerScrollCardBoxers>
     )
 }
-
 
 
 
