@@ -13,6 +13,7 @@ import ContainerSeparatorOptions from './components/ContainerSeparatorOptions'
 import ScrollContainerCards from './components/ScrollContainersBoxers'
 import BoxScrollCardFatura from './components/BoxScrollCardFatura'
 import BoxerScrollCards from './components/BoxerScrollCards'
+import BoxerScrollCardAdd from './components/BoxerScrollCardAdd'
 
 export default function HomeScreen() {
 
@@ -40,6 +41,8 @@ export default function HomeScreen() {
                     <BoxScrollCardFatura viewMoney={viewMoney}/>
                     <BoxerScrollCards virtualcard={true}  final={'2874'} block={false}/>
                     <BoxerScrollCards virtualcard={false} final={'8879'} block={true}/>
+                    <BoxerScrollCardAdd />
+
                 </ScrollContainerCards>
                 
                 <BoxerInvest viewMoney={viewMoney} />
