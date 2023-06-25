@@ -15,6 +15,7 @@ import BoxScrollCardFatura from './components/BoxScrollCardFatura'
 import BoxerScrollCards from './components/BoxerScrollCards'
 import BoxerScrollCardAdd from './components/BoxerScrollCardAdd'
 
+import ContainerSeparatorIcon from './components/ContainerSeparatorIcon'
 export default function HomeScreen() {
 
     // state view money eye
@@ -36,17 +37,16 @@ export default function HomeScreen() {
                 <BoxerInvest viewMoney={viewMoney} />
 
                 <ContainerSeparatorOptions title={'Meus Cartoes'} btn_text={'Cartão Virtual'} />
-                
-                <ScrollContainerCards>
-                    <BoxScrollCardFatura viewMoney={viewMoney}/>
-                    <BoxerScrollCards virtualcard={true}  final={'2874'} block={false}/>
-                    <BoxerScrollCards virtualcard={false} final={'8879'} block={true}/>
-                    <BoxerScrollCardAdd />
 
+                <ScrollContainerCards>
+                    <BoxScrollCardFatura viewMoney={viewMoney} />
+                    <BoxerScrollCards virtualcard={true} final={'2874'} block={false} />
+                    <BoxerScrollCards virtualcard={false} final={'8879'} block={true} />
+                    <BoxerScrollCardAdd />
                 </ScrollContainerCards>
-                
-                <BoxerInvest viewMoney={viewMoney} />
-                
+
+
+                <ContainerSeparatorIcon title={'Pix'} />
 
             </ContainerScrollView>
 
