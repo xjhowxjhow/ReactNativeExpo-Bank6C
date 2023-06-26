@@ -14,6 +14,7 @@ const Container = styled.View`
             align-items: flex-end;
             width: 100%;
             height: 60px;
+            padding-bottom: 10px;
             `
 
 
