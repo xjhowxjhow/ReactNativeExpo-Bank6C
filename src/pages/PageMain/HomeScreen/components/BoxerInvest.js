@@ -88,8 +88,8 @@ function BoxerInvest({viewMoney}) {
             </ContainerTop>
             <ContainerMid>
                 <TextContinaer>Total Bruto</TextContinaer>
-                <TextContinaer> {viewMoney ? 'R$ 217.785,45' : 'R$ ********'} </TextContinaer>
-                <TextContainerInvestGreen> {viewMoney ? 'R$ 785,45' : 'R$ ********'} </TextContainerInvestGreen>
+                <TextContinaer> {viewMoney ? 'R$ 217.785,45' : 'R$ ••••••'} </TextContinaer>
+                <TextContainerInvestGreen> {viewMoney ? 'R$ 785,45' : 'R$ ••••••'} </TextContainerInvestGreen>
             </ContainerMid>
             <DualContainerOptions>
                 <ButtonOption>

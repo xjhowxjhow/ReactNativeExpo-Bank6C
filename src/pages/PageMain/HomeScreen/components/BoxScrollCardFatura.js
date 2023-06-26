@@ -140,7 +140,7 @@ function BoxScrollCardFatura({viewMoney}) {
 
             <ContainerMid>
                 <TextNormal>R$</TextNormal>
-                <TextBoldMoney>{viewMoney ? '878,80': '---'}</TextBoldMoney>
+                <TextBoldMoney>{viewMoney ? '878,80': '••••••'}</TextBoldMoney>
             </ContainerMid>
 
             <ContainerBottom>

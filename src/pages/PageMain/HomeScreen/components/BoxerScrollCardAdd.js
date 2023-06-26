@@ -9,6 +9,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 const ContainerTop = styled.View`
 
     width: 120px;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;

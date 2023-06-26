@@ -1,15 +1,65 @@
-import React, { useState } from 'react'
-import { View, Text, StyleSheet, Image, TouchableOpacity, Animated, Button } from 'react-native'
+import React, { useState,useEffect } from 'react'
+import { View, Text, StyleSheet, Image, TouchableOpacity, Animated, Button ,Alert} from 'react-native'
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native';
-
+ import * as LocalAuthentication from 'expo-local-authentication';
 
 
 export default function Welcome() {
 
+    const [isBiometricSupported, setIsBiometricSupported] = useState(false);
     const navigation = useNavigation();
     const [popaberto, setPopaberto] = useState(false);
 
+
+
+    async function verifyAvailableAuthentication() {
+
+        const compatible = await LocalAuthentication.hasHardwareAsync();
+        console.log(compatible);
+
+        const types = await LocalAuthentication.supportedAuthenticationTypesAsync();
+
+        console.log('Metodo Suportado Para Auth: '+types.map(type => LocalAuthentication.AuthenticationType[type]));
+
+
+
+    }
+
+    async function handleAuthentication() {
+
+        const isBiometricEnrolled = await LocalAuthentication.isEnrolledAsync();
+        console.log(isBiometricEnrolled);
+
+        if (!isBiometricEnrolled) {
+            Alert.alert('Login','Biometria não cadastrada');
+            return;
+        }
+
+        const auth = await LocalAuthentication.authenticateAsync({
+            promptMessage: 'Autenticação Biometrica',
+            cancelLabel: 'Cancelar',
+            fallbackLabel: 'Biometria não disponivel',
+            
+        });
+
+        console.log(auth);
+
+        if (auth.success) {
+            console.log('Autenticado com sucesso');
+            navigation.navigate('PageMain');
+        }
+
+    }
+
+
+
+
+
+
+    useEffect(() => {
+        verifyAvailableAuthentication();
+    },[]);
 
     const togglePopup = () => {
         setPopaberto(!popaberto);
@@ -239,11 +289,11 @@ export default function Welcome() {
                         </View>
 
 
-                        <TouchableOpacity style={styles_pop.button} onPress={() => alert('Simple Button pressed')}>
+                        <TouchableOpacity style={styles_pop.button} >
                             <Text style={styles.text_btn2}>Entrar Com outra Conta</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={styles_pop.button_primary} onPress={() => navigation.navigate('PageMain')}>
+                        <TouchableOpacity style={styles_pop.button_primary} onPress={ handleAuthentication}>
                             <Text style={styles.text_btn}>Entrar</Text>
                         </TouchableOpacity>
 

@@ -34,7 +34,7 @@ function ContainerScrollView(props) {
 
     return (
 
-        <Container>
+        <Container nestedScrollEnabled={true} showsVerticalScrollIndicator={false}>
             <ContainerInside>
                 {props.children}
             </ContainerInside>

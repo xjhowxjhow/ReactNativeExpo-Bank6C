@@ -71,7 +71,7 @@ function BoxerAccount({viewMoney}) {
             <ContainerMid>
                 <TextContinaer>R$</TextContinaer>
                 {/* <Text style={BoxIntem.txt_int_cc_bottom}> {viewMoney ? '1.578,87' : '********'}</Text> */}
-                <TextContinaer>{viewMoney ? '1.578,87' : '********'}</TextContinaer>
+                <TextContinaer>{viewMoney ? '1.578,87' : '••••••'}</TextContinaer>
             </ContainerMid>
 
             <ContainerBottomBTN>

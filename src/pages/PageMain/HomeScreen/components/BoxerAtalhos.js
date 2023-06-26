@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
+import { Dimensions } from 'react-native'
 import styled from 'styled-components/native'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import Octicons from 'react-native-vector-icons/Octicons'
 import ContainerBoxersTransp from './ContainerBoxersTransp'
+
 
 const ContainerTop = styled.View`
     width: 100%;
@@ -12,7 +14,7 @@ const ContainerTop = styled.View`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
     padding-top: 15px;
     padding-right: 10px;
     padding-left: 10px;
@@ -68,7 +70,7 @@ const TextContinaerBig = styled.Text`
 
 function BoxerAtalhos() {
 
-
+    //console.log(Dimensions.get('window').width)
 
     return (
         <ContainerBoxersTransp>

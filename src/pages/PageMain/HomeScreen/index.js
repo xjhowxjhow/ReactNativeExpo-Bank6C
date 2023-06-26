@@ -19,9 +19,11 @@ import BoxerScrollCardAdd from './components/BoxerScrollCardAdd'
 import BoxScrollCardFatura from './components/BoxScrollCardFatura'
 import BoxerPix from './components/BoxerPix'
 import BoxerAtalhos from './components/BoxerAtalhos'
-
+import BoxerAds from './components/BoxerAds'
+import BoxerConfigurarSecao from './components/BoxerConfigurarSecao'
 // Scroll Containers
 import ScrollContainerCards from './components/ScrollContainersBoxers'
+
 
 
 export default function HomeScreen() {
@@ -61,6 +63,15 @@ export default function HomeScreen() {
                 <BoxerAtalhos />
 
                 <ContainerSeparatorOptions title={'Para Você'} btn_text={'Exibir menos '} />
+
+                <ScrollContainerCards>
+                    <BoxerAds bacground_img={require('../../../assets/page_main/ads/back2.jpg')} />
+                    <BoxerAds bacground_img={require('../../../assets/page_main/ads/back1.jpg')} />
+                    <BoxerAds bacground_img={require('../../../assets/page_main/ads/back3.jpg')} />
+
+                </ScrollContainerCards>
+
+                <BoxerConfigurarSecao />
 
             </ContainerScrollView>
 
