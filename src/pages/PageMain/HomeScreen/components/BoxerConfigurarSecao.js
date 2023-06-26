@@ -25,14 +25,14 @@ const TextContinaer = styled.Text`
 
 
 
-function BoxerConfigurarSecao() {
+function BoxerConfigurarSecao({configSection}) {
 
 
 
     return (
         <ContainerBoxers>
 
-            <Container>
+            <Container onPress={() => configSection()}>
                 <AntDesign name="setting" size={20} color="#22a0dd" />
                 <TextContinaer>Configurar seção</TextContinaer>
             </Container>
