@@ -36,7 +36,7 @@ function BoxerConfigurarSecao({configSection}) {
                 <AntDesign name="setting" size={20} color="#22a0dd" />
                 <TextContinaer>Configurar seção</TextContinaer>
             </Container>
-
+            
         </ContainerBoxers>
 
     )

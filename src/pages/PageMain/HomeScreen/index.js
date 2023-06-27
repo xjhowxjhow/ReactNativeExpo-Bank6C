@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
 
 // Animations
 import * as Animatable from 'react-native-animatable'
@@ -13,6 +14,11 @@ import ContainerHeader from './components/ContainerHeader'
 import ContainerScrollView from './components/ContainerScrollView'
 import ContainerSeparatorSection from './components/ContainerSeparatorSection'
 import ContainerSection from './components/ContainerSection'
+
+//Secao Components
+import SecaoHeader from './components/SecaoHeader'
+import SecaoDragDropComponent from './components/SecaoDragDropComponent'
+
 // Boxers
 import BoxerAccount from './components/BoxerAccount'
 import BoxerInvest from './components/BoxerInvest'
@@ -49,7 +55,9 @@ export default function HomeScreen() {
             {configSection ?
                 (
                     <Animatable.View animation="fadeInRight" style={{ flex: 1, backgroundColor: 'transparent' }} duration={200}>
-                        <BoxerConfigurarSecao configSection={setConfigSectionClick} />
+                        <SecaoHeader configSection={setConfigSectionClick} />
+                        <ContainerSeparatorSection title={'Pressione e arraste para reordenar as seções da tela inicial'} />
+                        <SecaoDragDropComponent />
                     </Animatable.View>
 
 
