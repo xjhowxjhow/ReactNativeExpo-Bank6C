@@ -8,6 +8,7 @@ import ContainerBoxers from './ContainerBoxers'
 import {GestureHandlerRootView} from 'react-native-gesture-handler'
 
 
+
 import DraggableFlatList,{
     ScaleDecorator,
     ShadowDecorator,
