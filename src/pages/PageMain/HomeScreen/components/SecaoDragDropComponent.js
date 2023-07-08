@@ -2,8 +2,19 @@ import React, { useState } from 'react'
 import styled from 'styled-components/native'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-import Octicons from 'react-native-vector-icons/Octicons'
 import ContainerBoxers from './ContainerBoxers'
+
+//  
+import {GestureHandlerRootView} from 'react-native-gesture-handler'
+
+
+import DraggableFlatList,{
+    ScaleDecorator,
+    ShadowDecorator,
+    OpacityDecorator,
+    useOnCellActiveAnimation,
+} from  'react-native-draggable-flatlist'
+
 
 const ContainerTop = styled.View`
     width: 90%;
@@ -22,7 +33,8 @@ const ContainerTop = styled.View`
 
 `
 const ContainerBottom = styled.TouchableOpacity`
-    width: 100%;
+    width: 90%;
+
     height: 50px;
     display: flex;
     flex-direction: row;
@@ -30,8 +42,8 @@ const ContainerBottom = styled.TouchableOpacity`
     align-items: center;
     gap:5px;
     background-color: #303030;
-    border-radius: 15px;
-
+    border-radius: 10px;
+    margin: 10px 10px 15px 20px;
 
 
 `
@@ -108,43 +120,57 @@ const ButtonOption = styled.TouchableOpacity`
 `
 
 
-function SecaoDragDropComponent() {
+function SecaoDragDropComponent({ order,data_set }) {
+
+    const ref = React.useRef(null);
+
 
     // test array data
 
-    const [data, setData] = useState([
-        { id: 1, name: 'Saldos' },
-        { id: 2, name: 'C6 Invest' },
-        { id: 3, name: 'Meus Cartões' },
-        { id: 4, name: 'Pix' },
-        { id: 5, name: 'Meus Atalhos' },
-        { id: 6, name: 'Para Voçe' },
+    const [data, setData] = useState(data_set)
 
-    ])
+    const onDragEnd = ({ data: newData }) => {
+        order(newData);
+        setData(newData);
 
+      };
 
-
-
+    const renderItem =({item,drag}) =>{
+        return(
+            <ScaleDecorator>
+                <OpacityDecorator activeOpacity={0.5}>
+                    <ShadowDecorator>
+                        <ContainerBottom onLongPress={drag}>
+                            <TextContinaerGroup>
+                                <TextContinaer>{item.name}</TextContinaer>
+                            </TextContinaerGroup>
+                            <ButtonsLayoutTop>
+                                <MaterialCommunityIcons name="drag" size={20} color="#d5d5d5" />
+                            </ButtonsLayoutTop>
+                        </ContainerBottom>
+                    </ShadowDecorator>
+                </OpacityDecorator>
+            </ScaleDecorator>
+        )
+    } 
     return (
         <ContainerBoxers>
-            <ContainerTop>
 
-                {data.map((item) => (
-                    <ContainerBottom key={item.id}>
-                        <TextContinaerGroup>
-                            <TextContinaer>{item.name}</TextContinaer>
-                        </TextContinaerGroup>
-                        <ButtonsLayoutTop>
-                            <Octicons name="arrow-switch" size={20} color="#d5d5d5" />
-                        </ButtonsLayoutTop>
-                    </ContainerBottom>
-                ))}
-            </ContainerTop>
+
+            <GestureHandlerRootView>
+                <DraggableFlatList
+                ref={ref}
+                data={data}
+                keyExtractor={(item) => item.id}
+                onDragEnd={onDragEnd}
+                renderItem={renderItem}
+                />
+            </GestureHandlerRootView>
 
 
             <DualContainerOptions>
                 <ButtonOption>
-                    {/* <TextDualOptions>Meus limites Pix</TextDualOptions> */}
+                    <TextDualOptions>Salvar</TextDualOptions>
                 </ButtonOption>
             </DualContainerOptions>
 
@@ -159,4 +185,3 @@ export default SecaoDragDropComponent
 
 
 
-//  {/* <Text style={BoxIntem.txt_int_cc_bottom}>{viewMoney ? 'R$ 217.785,45' : 'R$ ********'} </Text> */}

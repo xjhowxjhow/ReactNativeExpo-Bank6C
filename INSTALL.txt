@@ -51,3 +51,4 @@ Logs for your project will appear below. Press Ctrl+C to exit.
     -- dependencies:
         1 - npx expo install react-native-reanimated
         2-  npx expo install react-native-gesture-handler
+        3- npx expo install react-native-draggable-flatlist
