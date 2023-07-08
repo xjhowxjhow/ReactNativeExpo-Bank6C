@@ -45,3 +45,10 @@ Logs for your project will appear below. Press Ctrl+C to exit.
 13.1 continua $  npx expo  react-native link react-native-vector-icons 
 
 14- npx expo install expo-local-authentication auth
+
+
+15 - list drag and drop:
+    -- dependencies:
+        1 - npx expo install react-native-reanimated
+        2-  npx expo install react-native-gesture-handler
+        3- npx expo install react-native-draggable-flatlist
