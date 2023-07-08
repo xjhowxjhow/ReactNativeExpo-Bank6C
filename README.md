@@ -7,7 +7,7 @@ Este é o meu primeiro projeto para Android e iOS, desenvolvido utilizando React
 
 - **Autenticação biométrica**: Os usuários podem acessar sua conta utilizando a autenticação biométrica, como a impressão digital.
 
-- **Drag and Drop**: Implementei a funcionalidade de "Drag and Drop" usando as bibliotecas [react-native-draggable](https://github.com/tongyy/react-native-draggable) e [react-native-gesture-handler](https://github.com/software-mansion/react-native-gesture-handler). Aqui está um exemplo de código para a implementação:
+- **Drag and Drop**: Implementei a funcionalidade de "Drag and Drop" usando as bibliotecas [react-native-draggable](https://github.com/tongyy/react-native-draggable) e [react-native-gesture-handler](https://github.com/software-mansion/react-native-gesture-handler). Aqui está um exemplo:
 
 https://github.com/xjhowxjhow/ReactNativeExpo-Bank6C/assets/58306583/12b12bcd-7e78-4946-bab0-7b39b2d2cac9
 
